@@ -1,84 +1,87 @@
 # Doomsday Protocol: Rebirth in Another World
-[中文](https://github.com/xiaodi007/random-x/blob/main/README-zh.md)
-## Overview
+[中文](https://github.com/xiaodi007/AI-CardGame/blob/main/README-zh.md)
 
-This is a card battle game implemented using the Move programming language and the RandomX module for generating random game data. The game features a player versus AI combat system where players can utilize items and make strategic decisions to defeat their AI opponent. The game starts with generating random data for the game setup using a smart contract.
+Welcome to **Doomsday Protocol: Rebirth in Another World**!
 
-## Gameplay
+This is a highly challenging and strategic card battle game, inspired by the classic "Buckshot Roulette" and built using the Move Sui programming language along with Sui's latest random modules. Every game offers a new experience, as all game elements—from the initial environment to your hand of cards and health points—are randomly generated. The current game mode is player versus AI, making each match a unique challenge.
 
-"Doomsday Protocol: Rebirth in Another World" is a turn-based card game where players can choose to battle against AI or other players. The game is inspired by "Buckshot Roulette". At the start of each game, the system automatically configures the number of "Deadly Worlds" and "Safe Worlds" and randomly assigns initial health values (1, 2, 3, or 4) that are the same for both sides. Players use item cards to defeat each other in each randomly assigned alternate world until one player's health reaches zero. If both players still have health after the current alternate world is cleared, the system redistributes the worlds and item cards.
+### Game Overview
 
-### Item
-- Green Card: Restores 1 health point per use. Multiple uses per round are allowed but can only restore up to the initial health value for that round. Further uses are ineffective.
-- Red Card: Deals double damage for the current round. Can be used once per round.
-- Eye Card: Reveals the current world status. Can be used once per round.
-- EMP Card: Grants priority choice in the next round. Can be used once per round.
-- Purple Card: Devours the current world and moves to the next world. Can be used once per round.
+In *Doomsday Protocol: Rebirth in Another World*, your goal is to use various item cards to defeat your opponent in randomly generated otherworlds. At the start of each game, the system uses smart contracts to generate and configure the game environment, including the number of “Lethal Worlds” and “Safe Worlds,” as well as the initial health points for both sides. Your task is to use your cards wisely, making strategic decisions each turn to reduce your opponent's health until one side reaches zero.
 
-### AI
-It features six pre-set AI characters((qwen-max model)), each with a unique strategy preference:
-- Default
-- Joker
-- King Zhou of Shang
-- Lu Zhishen
+### Lethal Worlds and Safe Worlds
+
+- **Lethal World**: Entering this world will reduce your health by 1 point. This world is full of danger.
+- **Safe World**: Entering this world does not reduce your health, and you will gain the initiative for the next turn.
+
+At the beginning of each round, the system will generate the number of “Lethal Worlds” and “Safe Worlds,” but their sequence is unknown. You need to make limited inferences using the tools and probability at your disposal to determine which world you are about to enter. Entering a Lethal World will reduce your health, so each choice is a strategic gamble.
+
+### Game Rules
+
+#### Health Rules
+- At the start of the game, both sides have the same initial health, ranging from 1 to 4.
+- During the game, you can use the "Fountain of Life" item to increase your health by 1 point unless your health is already full.
+- If your opponent enters a Lethal World, their health will decrease by 1 point. If you use the "Iron Torrent" item, the damage from the Lethal World will double, reducing health by 2 points.
+
+#### Item Rules
+- At the start of the game, you will be given 4 random items. Each item has a unique effect, and you need to use them wisely based on the current situation and your opponent’s status.
+- The 5 types of items and their effects are:
+  - **Fountain of Life**: Increases your health by 1 point (unless your health is full).
+  - **EMP**: Grants you the initiative for the next turn, allowing you to go first.
+  - **Iron Torrent**: Doubles the damage from the Lethal World in the current round.
+  - **Format**: Clears the current otherworld, immediately moving to the next one (Lethal or Safe).
+  - **Yin-Yang Eye**: Reveals whether the current otherworld is Lethal or Safe.
+- You must have the initiative to use items, and using items does not end your turn. You can use multiple items in one turn to create the best effect.
+
+### Strategy Tips
+- At the beginning of each round, assess your health, your opponent’s health, available items, and known otherworld information to develop the best strategy to suppress your opponent.
+- Based on your character’s traits (smart but ruthless), aim not only to physically weaken your opponent’s health but also to apply psychological pressure.
+- When you have the initiative, take full advantage of item combinations, such as using "Yin-Yang Eye" to identify the world type before using "Iron Torrent" to maximize damage.
+- If the situation is unfavorable, use the "EMP" item to regain the initiative, and try to turn the tide by using the "Format" item to reconfigure the otherworlds.
+
+### Points System
+For every victory against the AI, you will earn 100 points, while a loss will cost you 100 points. If your points are insufficient, the game will call the Bucket Protocol's swapin interface to exchange USDC for Bucket points (1 USDC equals 100 points), ensuring you can continue participating in the game.
+
+### Game Features
+One of the game's standout features is that the AI opponents are driven by GPT-like agents with unique personalities. These agents generate different strategies and dialogue based on the game’s current environment, ensuring that every match feels fresh and challenging.
+
+We believe that *Doomsday Protocol: Rebirth in Another World* will be your go-to game for strategic battles. Dive in and experience it today!
+
+### AI Characters
+The game features six AI characters (based on the qwen-max model), each with different strategic preferences:
+- Sima Yi
+- Batman
 - Sherlock Holmes
-- Shinichi Kudo
+- Kazama Asuka
+- Qin Shi Huang
+- Joker
 
-
-
-## Advantages and Disadvantages
-
-### Advantages
+## Advantages
 
 1. **Randomness and Replayability**:
-   - **Random Game Data**: Each game starts with different random data generated by the RandomX module, making each game unique and preventing monotony.
-   - **Dynamic Environment**: Randomly generated world settings, items, and initial conditions ensure a constantly changing game environment, requiring players to continuously adjust their strategies.
+   - **Random Game Data**: Utilizing the Random module, different random data is generated at the start of each game, making every match unique. Players won't feel repetitive or bored, enhancing the game's replayability.
+   - **Dynamic Environment**: The randomly generated world settings, items, and initial conditions keep the game environment constantly changing, requiring players to continually adapt their strategies to face new challenges.
 
 2. **Blockchain Technology**:
-   - **Fairness and Transparency**: Using smart contracts to generate game data.
+   - **Fairness and Transparency**: Smart contracts are used to generate game data, ensuring fairness and transparency.
 
 3. **Enhanced Strategy**:
-   - **Diverse Decisions**: Players can use items, roll dice, and make various strategic decisions, adding depth and strategy to the game.
-   - **AI Opponents**: Fighting against AI opponents adds challenge, requiring players to use wisdom and strategy to win.
+   - **Diverse Decisions**: Players can make various strategic decisions using items, adding depth and strategy to the game.
+   - **AI Battles**: Battles against AI opponents add an extra layer of challenge, requiring players to use their wits and strategies to defeat them.
 
+## Future Development and Market
 
-4. **Rewards and Penalties (Future)**:
-   - **Instant Settlement**: After the game, smart contracts can immediately distribute rewards or enforce penalties using Sui tokens or other cryptocurrencies, enhancing the immediacy of the gaming experience.
-   - **Decentralized Economy**: Transactions and rewards between players can be achieved through the token system, establishing a decentralized game economy.
+1. **Points Redemption**:
+   - Game coins can be used to participate in special events or tournaments. These points can be redeemed for various rewards, NFTs, and merchandise, but not for purchasing cards and equipment, ensuring game balance.
 
+2. **NFT Trading**:
+   - Rare cards, equipment, and skins are issued in the form of NFTs, which players can freely trade in the built-in market, with the platform charging transaction fees.
 
-## Future Development Directions and Commercial
+3. **Battle System**:
+   - Players can battle against other players, earning or losing points based on the outcome. Points can be used for rankings and rewards.
 
-- Game Coin Exchange: 
-  
-    Players buy game coins for special events or competitions, ensuring balance.
+4. **AI Battles**:
+   - Players can create and train AI characters, allowing other players to challenge them and earn points.
 
-- NFT Trading: 
-  
-    Rare cards, equipment, and skins issued as NFTs, freely tradable in the market.
-
-- AI Character Trading: 
-
-    Players can trade created and trained AI characters.
-
-- Platform Fee: 
-
-    Charged for each player and AI battle.
-
-- Point Exchange: 
-
-    Points earned from battles can be exchanged for NFTs and traded.
-
-- Crypto Staking: 
-
-    Exchanged cryptocurrencies can be staked for interest.
-
-- Battle System: 
-
-    Players compete against each other for points, influencing rankings and rewards.
-
-- AI Battle: 
-
-    Players create and train AI characters for others to challenge.
-
-
+5. **AI Character Trading**:
+   - AI characters can also be traded, with the platform charging transaction fees.

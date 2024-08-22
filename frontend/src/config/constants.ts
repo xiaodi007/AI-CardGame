@@ -1,4 +1,4 @@
-export const PACKAGE_ID = "0xef397addf2130f5cea5c90702f584f2859a4111fbff0eabce57422f0994b2ad2";
+export const PACKAGE_ID = "0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86";
 export const MAINNET_COUNTER_PACKAGE_ID = "0xTODO";
 
 export const ROLES = [

@@ -113,12 +113,6 @@ const Splash = () => {
     const txb = new TransactionBlock();
     setShowLoading(true);
 
-    txb.moveCall({
-      arguments: [
-        txb.object("0x8"), // r: &Random
-      ],
-      target: `${counterPackageId}::randomX::rollDice`,
-    });
     if (userPoints < 100) {
       // Instantiate BucketClients
       const coinDetails = await client.getCoins({
@@ -135,7 +129,7 @@ const Splash = () => {
       // console.log(showAddress)
       const coinIn = filteredData[0].coinObjectId;
       const coinInObj = txb.object(coinIn);
-      console.log(coinInObj);
+      // console.log(coinInObj);
       const usdcInput = txb.splitCoins(coinInObj, [amountToTrans]);
 
       // txb.transferObjects([referralRebate], tx.pure.address(referrer));
@@ -147,6 +141,13 @@ const Splash = () => {
       );
       txb.transferObjects([coinOut], showAddress);
     }
+
+    txb.moveCall({
+      arguments: [
+        txb.object("0x8"), // r: &Random
+      ],
+      target: `${counterPackageId}::game::rollDice`,
+    });
 
     signAndExecute(
       {
@@ -163,7 +164,12 @@ const Splash = () => {
               digest: tx.digest,
             })
             .then(() => {
-              const objectId = tx.effects?.created?.[0]?.reference?.objectId;
+              console.log("----------------objectID----------------")
+              const objectArr = tx.effects?.created
+              // const objectId = tx.effects?.created?.[2]?.reference?.objectId;
+              const objectId = objectArr.find(item => item.owner.Shared)?.reference.objectId;
+              console.log(tx.effects?.created)
+              console.log("/////////////////////////////////////////////")
               localStorage.setItem("gameId", objectId + "");
 
               navigate("/home");

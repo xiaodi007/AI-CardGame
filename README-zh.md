@@ -1,4 +1,6 @@
 # Doomsday Protocol: Rebirth in Another World
+[PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
+[讲解视频](https://www.bilibili.com/video/BV1BTWLeoEtx/)
 
 欢迎来到《末日协议: 异世界重生》！
 
@@ -73,7 +75,7 @@
 
 
 ## 未来发展方向和市场
--积分兑换：
+- 积分兑换：
 
 游戏币可用于参与特殊活动或比赛。可以使用这些积分来兑换各种奖品、NFT和手办。，但不能用于购买卡牌和装备，确保游戏平衡性。
 
@@ -92,3 +94,8 @@
 - AI角色交易：
 
  AI角色也可以进行交易，平台收取交易手续费。
+
+
+## 合约地址
+testnet: 0x94d7687fe9af5e3cf302c4b3bc077a0e5546f6852a43fa269d5ad9fb03162048
+mainnet: 0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86

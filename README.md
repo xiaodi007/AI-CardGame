@@ -1,5 +1,7 @@
 # Doomsday Protocol: Rebirth in Another World
 [中文](https://github.com/xiaodi007/AI-CardGame/blob/main/README-zh.md)
+[PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
+[Into Video](https://www.bilibili.com/video/BV1BTWLeoEtx/)
 
 Welcome to **Doomsday Protocol: Rebirth in Another World**!
 
@@ -40,7 +42,7 @@ At the beginning of each round, the system will generate the number of “Lethal
 - If the situation is unfavorable, use the "EMP" item to regain the initiative, and try to turn the tide by using the "Format" item to reconfigure the otherworlds.
 
 ### Points System
-For every victory against the AI, you will earn 100 points, while a loss will cost you 100 points. If your points are insufficient, the game will call the Bucket Protocol's swapin interface to exchange USDC for Bucket points (1 USDC equals 100 points), ensuring you can continue participating in the game.
+For every victory against the AI, you will earn 100 points, while a loss will cost you 100 points. If your points are insufficient, the game will call the Bucket Protocol's swapin interface to exchange. For every 1 USDC exchanged into 1 Bucket, you will receive 100 points. (1 USDC equals 100 points), ensuring you can continue participating in the game.
 
 ### Game Features
 One of the game's standout features is that the AI opponents are driven by GPT-like agents with unique personalities. These agents generate different strategies and dialogue based on the game’s current environment, ensuring that every match feels fresh and challenging.
@@ -85,3 +87,8 @@ The game features six AI characters (based on the qwen-max model), each with dif
 
 5. **AI Character Trading**:
    - AI characters can also be traded, with the platform charging transaction fees.
+
+
+## contract address
+testnet: 0x94d7687fe9af5e3cf302c4b3bc077a0e5546f6852a43fa269d5ad9fb03162048
+mainnet: 0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86

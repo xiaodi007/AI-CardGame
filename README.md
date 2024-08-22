@@ -1,6 +1,9 @@
 # Doomsday Protocol: Rebirth in Another World
+
 [中文](https://github.com/xiaodi007/AI-CardGame/blob/main/README-zh.md)
+
 [PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
+
 [Into Video](https://www.bilibili.com/video/BV1BTWLeoEtx/)
 
 Welcome to **Doomsday Protocol: Rebirth in Another World**!

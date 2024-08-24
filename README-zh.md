@@ -1,4 +1,4 @@
-# Doomsday Protocol: Rebirth in Another World
+# 末日协议: 异世界重生
 
 [PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
 
@@ -6,7 +6,7 @@
 
 欢迎来到《末日协议: 异世界重生》！
 
-这是一款极具挑战性和策略性的卡牌对战游戏，受到了经典的“Buckshot Roulette”启发，并通过 Move Sui 编程语言和 Sui 最新的随机模块进行构建。每一局游戏都会为你带来全新的体验，因为所有的游戏元素——从初始环境到你的手牌、血量，都是随机生成的。当前游戏模式为玩家对战AI，每一局都是一场独特的挑战。
+这是一款有挑战性和策略性的卡牌对战游戏，受到了经典的“Buckshot Roulette”启发，并通过 Move Sui 编程语言和 Sui 最新的Random模块进行构建。每一局游戏都会为你带来全新的体验，因为所有的游戏元素——从初始环境到你的手牌、血量，都是随机生成的。当前游戏模式为玩家对战AI，每一局都是一场独特的挑战。积分系统与Bucket Protocol集成，当积分不足时，自动兑换USDC为BUCK，转化为游戏积分继续游玩
 
 ### 游戏概述
 

@@ -112,6 +112,7 @@ const Splash = () => {
     }
     const txb = new TransactionBlock();
     setShowLoading(true);
+    let is_charge_points = false;
 
     if (userPoints < 100) {
       // Instantiate BucketClients
@@ -140,6 +141,8 @@ const Splash = () => {
         "0xde5448c74d811c5409041537078665ab8497a28fb125a95d7d8a12300cc655d5" // referrer address
       );
       txb.transferObjects([coinOut], showAddress);
+      is_charge_points = true;
+      
     }
 
     txb.moveCall({
@@ -171,7 +174,10 @@ const Splash = () => {
               console.log(tx.effects?.created)
               console.log("/////////////////////////////////////////////")
               localStorage.setItem("gameId", objectId + "");
-
+              localStorage.setItem("addressId", showAddress + "");
+              if(is_charge_points) {
+                updateUserPoints(showAddress, 100)
+              }
               navigate("/home");
             });
         },

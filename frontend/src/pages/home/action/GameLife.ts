@@ -104,6 +104,8 @@ class LifeAndDeathGame {
     this.playerRandom = initData.player_random;
     this.aiRandom = initData.ai_random;
     this.distributeItems();
+    console.log(`afsdfas。`);
+    console.log(this.addressId);
     console.log(`游戏准备完毕，开始进行第一回合。`);
   }
 

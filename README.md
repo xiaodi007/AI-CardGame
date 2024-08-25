@@ -1,10 +1,19 @@
 # Doomsday Protocol: Rebirth in Another World
 
+
 [中文](https://github.com/xiaodi007/AI-CardGame/blob/main/README-zh.md)
+
 
 [PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
 
+
 [Into Video](https://www.bilibili.com/video/BV1BTWLeoEtx/)
+
+
+[mainnet demo](http://47.109.83.232:3036/) 
+
+!!! need swap wUSDC (Eth) first (1 wUSDC -> 100 points )
+
 
 Welcome to **Doomsday Protocol: Rebirth in Another World**!
 

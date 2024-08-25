@@ -1,8 +1,16 @@
 # 末日协议: 异世界重生
 
+
 [PPT](https://docs.google.com/presentation/d/1NgGcXIBvApcqbUIwqBHMmbDlrDK6n7HYewvUWO3CfMY/edit?usp=sharing)
 
+
 [讲解视频](https://www.bilibili.com/video/BV1BTWLeoEtx/)
+
+
+[mainnet demo](http://47.109.83.232:3036/) 
+
+!!! 需要先兑换wUSDC(Eth) (1 wUSDC -> 100 points )
+
 
 欢迎来到《末日协议: 异世界重生》！
 

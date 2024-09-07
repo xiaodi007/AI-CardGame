@@ -12,6 +12,10 @@
 
 [mainnet demo](http://47.109.83.232:3036/) 
 
+
+[Walrus site](https://xq917z4n9e1acc9lljw6lhopnjigg0xdu971sb07w0pdrs8rs.walrus.site) 
+
+
 !!! need swap wUSDC (Eth) first (1 wUSDC -> 100 points )
 
 
@@ -112,3 +116,5 @@ mainnet: 0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86
 New site object ID: 0x25975dd2fa277b2c5ad4cffff501aedc4fd780b62d3bc1356d0805e5de26fa68
 
 Browse the resulting site at: https://xq917z4n9e1acc9lljw6lhopnjigg0xdu971sb07w0pdrs8rs.walrus.site
+
+battle data example: walrus read JVuqGYoC10Gv7oRn7xCFKhPjKbEQ09sJ-yoooYOC9b0

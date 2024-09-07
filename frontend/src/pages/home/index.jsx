@@ -258,9 +258,9 @@ const Home = () => {
     <>
       <div className="text-center">
         <div className="mb-6">回合结束</div>
-        <div className="text-3xl font-bold mb-40">{game?.leader} 赢了</div>
-        <div className="text-2xl font-bold mb-40">游戏数据将存储在Walrus上</div>
-        <div className="text-2xl font-bold mb-40">Walrus blob_id: {game?.conversations_blob_id} </div>
+        <div className="text-3xl font-bold mb-20">{game?.leader} 赢了</div>
+        <div className="text-2xl font-bold mb-20">游戏数据将存储在Walrus上</div>
+        <div className="text-2xl font-bold mb-20">Walrus blob_id: {game?.conversations_blob_id} </div>
         <div
           className=" w-[280px] m-auto p-2 text-lg text-[#26b2b9] border-2 border-[#26b2b9] text-center cursor-pointer"
           onClick={() => {

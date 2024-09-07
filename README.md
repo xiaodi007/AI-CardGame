@@ -17,7 +17,7 @@
 
 Welcome to **Doomsday Protocol: Rebirth in Another World**!
 
-This is a highly challenging and strategic card battle game, inspired by the classic "Buckshot Roulette" and built using the Move Sui programming language along with Sui's latest random modules. Every game offers a new experience, as all game elements—from the initial environment to your hand of cards and health points—are randomly generated. The current game mode is player versus AI, making each match a unique challenge.
+This is a highly challenging and strategic card battle game, inspired by the classic "Buckshot Roulette" and built using the Move Sui programming language along with Sui's latest random modules. Every game offers a new experience, as all game elements—from the initial environment to your hand of cards and health points—are randomly generated. The current game mode is player versus AI, making each match a unique challenge. Integrate with the Bucket Protocol, and when points are insufficient, automatically exchange USDC for BUCK, converting it into game points to continue playing.Integrated with WALRUS, Battle data from AI matches will be stored on Walrus to train stronger AI and the static content.
 
 ### Game Overview
 
@@ -103,4 +103,12 @@ The game features six AI characters (based on the qwen-max model), each with dif
 
 ## contract address
 testnet: 0x94d7687fe9af5e3cf302c4b3bc077a0e5546f6852a43fa269d5ad9fb03162048
+
 mainnet: 0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86
+
+
+## Walrus testnet address
+
+New site object ID: 0x25975dd2fa277b2c5ad4cffff501aedc4fd780b62d3bc1356d0805e5de26fa68
+
+Browse the resulting site at: https://xq917z4n9e1acc9lljw6lhopnjigg0xdu971sb07w0pdrs8rs.walrus.site

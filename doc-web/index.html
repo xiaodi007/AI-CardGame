@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-translate="banner.title"></title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <header>
+      <nav>
+        <div class="logo" data-translate="nav.logo"></div>
+        <ul>
+          <li><a href="#overview" data-translate="nav.overview"></a></li>
+          <li><a href="#gameplay" data-translate="nav.gameplay"></a></li>
+          <!-- <li><a href="#cards" data-translate="nav.cards"></a></li> -->
+          <li><a href="#ai" data-translate="nav.ai"></a></li>
+          <li><a href="https://github.com/xiaodi007/AI-CardGame" data-translate="nav.contact"></a></li>
+        </ul>
+        <!-- 语言切换按钮 -->
+        <div class="language-switch">
+          <button id="zh-btn">中文</button>    
+          <button id="en-btn">English</button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <section id="banner">
+      <div class="banner-content">
+        <h1 data-translate="banner.title"></h1>
+        <p data-translate="banner.subtitle"></p>
+        <p data-translate="banner.subtitle1"></p>
+        <a href="http://47.109.83.232:3036/" class="cta-button" data-translate="banner.cta"></a>
+      </div>
+    </section>
+
+    <!-- 游戏概览 -->
+    <section id="overview">
+      <h2 data-translate="overview.title"></h2>
+      <p data-translate="overview.subtitle"></p>
+      <div class="features">
+        <div class="feature-card">
+          <h3 data-translate="overview.feature1"></h3>
+          <p data-translate="overview.feature1_desc"></p>
+        </div>
+        <div class="feature-card">
+          <h3 data-translate="overview.feature2"></h3>
+          <p data-translate="overview.feature2_desc"></p>
+        </div>
+        <div class="feature-card">
+          <h3 data-translate="overview.feature3"></h3>
+          <p data-translate="overview.feature3_desc"></p>
+        </div>
+        <div class="feature-card">
+            <h3 data-translate="overview.feature4"></h3>
+            <p data-translate="overview.feature4_desc"></p>
+          </div>
+      </div>
+    </section>
+
+    <!-- 玩法介绍 -->
+    <section id="gameplay">
+      <h2 data-translate="gameplay.title"></h2>
+      <p data-translate="gameplay.description"></p>
+      <!-- 卡牌展示容器 -->
+      <div class="card-container" id="card-container">
+        <!-- 卡片将通过 JavaScript 动态加载到这里 -->
+      </div>
+
+
+  <!-- 三张界面介绍缩略图 -->
+  <div class="interface-intro">
+    <h3  class="interface-title" data-translate="gameplay.intro"></h2>
+<div class="interface-thumbnails">
+    <img src="./images/step1.png" alt="Interface 1" class="thumbnail" id="img1">
+    <img src="./images/step2.png" alt="Interface 2" class="thumbnail" id="img2">
+    <img src="./images/step3.png" alt="Interface 3" class="thumbnail" id="img3">
+  </div> 
+</div>
+
+  <!-- 模态框 -->
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+      <img src="" alt="Expanded Interface" id="expanded-img" class="modal-image">
+    </div>
+  </div>
+    </section>
+
+    <!-- AI 竞技 -->
+    <section id="ai">
+      <h2 data-translate="ai.title"></h2>
+      <p data-translate="ai.description"></p>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+      <p data-translate="footer.text"></p>
+    </footer>
+
+    <!-- JavaScript 文件 -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

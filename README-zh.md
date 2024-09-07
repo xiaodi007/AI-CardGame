@@ -14,7 +14,7 @@
 
 欢迎来到《末日协议: 异世界重生》！
 
-这是一款有挑战性和策略性的卡牌对战游戏，受到了经典的“Buckshot Roulette”启发，并通过 Move Sui 编程语言和 Sui 最新的Random模块进行构建。每一局游戏都会为你带来全新的体验，因为所有的游戏元素——从初始环境到你的手牌、血量，都是随机生成的。当前游戏模式为玩家对战AI，每一局都是一场独特的挑战。积分系统与Bucket Protocol集成，当积分不足时，自动兑换USDC为BUCK，转化为游戏积分继续游玩
+这是一款有挑战性和策略性的卡牌对战游戏，受到了经典的“Buckshot Roulette”启发，并通过 Move Sui 编程语言和 Sui 最新的Random模块进行构建。每一局游戏都会为你带来全新的体验，因为所有的游戏元素——从初始环境到你的手牌、血量，都是随机生成的。当前游戏模式为玩家对战AI，每一局都是一场独特的挑战。积分系统与Bucket Protocol集成，当积分不足时，自动兑换USDC为BUCK，转化为游戏积分继续游玩。集成WALRUS，与AI对战数据将存储在Walrus上以训练更强的AI还有游戏静态文件。
 
 ### 游戏概述
 
@@ -108,4 +108,11 @@
 
 ## 合约地址
 testnet: 0x94d7687fe9af5e3cf302c4b3bc077a0e5546f6852a43fa269d5ad9fb03162048
+
 mainnet: 0xe8451445cbeac5de8de145bcca7cd60b475e56884dc8c454c95b2fa6dddceb86
+
+## Walrus testnet地址
+
+New site object ID: 0x25975dd2fa277b2c5ad4cffff501aedc4fd780b62d3bc1356d0805e5de26fa68
+
+Browse the resulting site at: https://xq917z4n9e1acc9lljw6lhopnjigg0xdu971sb07w0pdrs8rs.walrus.site

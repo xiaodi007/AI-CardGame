@@ -59,7 +59,6 @@ const Splash = () => {
     fetchLeaderboard();
   }, [showAddress]);
 
-  
   function StartGameBtnWrapper() {
     const account = useCurrentAccount();
     useEffect(() => {
@@ -76,14 +75,13 @@ const Splash = () => {
           setUserBalance(balance.userPoints);
         }
       };
-  
+
       fetchUserBalance();
     });
 
     if (!account) {
       return null;
     }
-    
 
     return (
       <div>
@@ -142,7 +140,6 @@ const Splash = () => {
       );
       txb.transferObjects([coinOut], showAddress);
       is_charge_points = true;
-      
     }
 
     txb.moveCall({
@@ -167,16 +164,17 @@ const Splash = () => {
               digest: tx.digest,
             })
             .then(() => {
-              console.log("----------------objectID----------------")
-              const objectArr = tx.effects?.created
+              console.log("----------------objectID----------------");
+              const objectArr = tx.effects?.created;
               // const objectId = tx.effects?.created?.[2]?.reference?.objectId;
-              const objectId = objectArr.find(item => item.owner.Shared)?.reference.objectId;
-              console.log(tx.effects?.created)
-              console.log("/////////////////////////////////////////////")
+              const objectId = objectArr.find((item) => item.owner.Shared)
+                ?.reference.objectId;
+              console.log(tx.effects?.created);
+              console.log("/////////////////////////////////////////////");
               localStorage.setItem("gameId", objectId + "");
               localStorage.setItem("addressId", showAddress + "");
-              if(is_charge_points) {
-                updateUserPoints(showAddress, 100)
+              if (is_charge_points) {
+                updateUserPoints(showAddress, 100);
               }
               navigate("/home");
             });
@@ -201,7 +199,12 @@ const Splash = () => {
   return (
     <div className="startPage w-full h-screen py-6">
       {/* <div className="absolute top-[20px] m-auto"> */}
-      <img src="/assets/title.png" className="w-[300px] m-auto mb-10" />
+      {/* <img src="/assets/title.png" className="w-[300px] m-auto mb-10" /> */}
+      <img
+        src="https://aggregator-devnet.walrus.space/v1/oe5732Eu8Ebsyj1DURHG4SAeNCbIN5ipQ0URBwqYAjE"
+        className="w-[300px] m-auto mb-10"
+        alt="title"
+      />
       {/* <div className="description">
         这种方法确保了在用户交互后音频才会播放，符合现代浏览器的自动播放策略。您可以根据需要添加更多的控制，例如暂停、停止、调整音量等。
         这种方法确保了在用户交互后音频才会播放，符合现代浏览器的自动播放策略。您可以根据需要添加更多的控制，例如暂停、停止、调整音量等。
@@ -237,7 +240,8 @@ const Splash = () => {
       </div>
 
       <div className="absolute top-3 right-3">
-        <AudioPlay src="/assets/music/rush1.mp3" />
+        {/* <AudioPlay src="/assets/music/rush1.mp3" /> */}
+        <AudioPlay src="https://aggregator-devnet.walrus.space/v1/3T3TDAioDnkT08rZlapdOix1v2TpD4nDaQMOhuf9f-A"/>
       </div>
     </div>
   );

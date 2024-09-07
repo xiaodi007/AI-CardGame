@@ -41,6 +41,8 @@ class LifeAndDeathGame {
   gameOver: boolean;
   aiMsg: string;
   sessionId: string;
+  conversations: any[];
+  conversations_blob_id: any;
   listeners: any;
 
   constructor() {
@@ -69,12 +71,14 @@ class LifeAndDeathGame {
     this.gameOver = false;
     this.aiMsg = "";
     this.sessionId = "";
+    this.conversations = [];
+    this.conversations_blob_id = "";
     this.listeners = {
-      onGameEvent: () => {},
+      onGameEvent: () => { },
     };
   }
 
-  
+
 
   async prepareGame(initData: InitData) {
     console.log("Preparing game...");
@@ -158,11 +162,11 @@ class LifeAndDeathGame {
   }
 
   async startRound() {
-    if (this.isGameOver()) {
+    if (await this.isGameOver()) {
       return;
     }
     console.log('------------------startRound--------------');
-    
+
     if (this.worldsLeft === 0) {
       await this.resetWorldsAndItems();
       return;
@@ -171,19 +175,49 @@ class LifeAndDeathGame {
     await this.showDecisionOptions();
   }
 
-  isGameOver(): boolean {
+  saveConversationsToJson(conversations: any[], fileName: string): File {
+    const jsonBlob = new Blob([JSON.stringify(conversations)], { type: "application/json" });
+    return new File([jsonBlob], fileName, { type: "application/json" });
+  }
+
+  async uploadJsonFile(file: File) {
+    try {
+        const response = await fetch(`https://publisher-devnet.walrus.space/v1/store?epochs=1`, {
+            method: "PUT",
+            body: file,
+        });
+
+        if (response.status === 200) {
+            const info = await response.json();
+            console.log("Upload successful:", info);
+            console.log("Media type:", file.type);
+            return  info.newlyCreated.blobObject.blobId ;
+        } else {
+            throw new Error("Something went wrong when storing the blob!");
+        }
+    } catch (error) {
+        console.error("Error uploading the file:", error);
+        return undefined; 
+    }
+}
+async isGameOver(): Promise<boolean> {
     if (this.playerHealth <= 0 || this.aiHealth <= 0) {
       console.log(
         `游戏结束，${this.playerHealth <= 0 ? "人工智能" : "人类"}获胜。`
       );
       this.gameOver = true;
       this.leader = this.playerHealth <= 0 ? "人工智能" : "人类";
-      if (this.leader ==="人类" && this.gameOver) {
+      const jsonFile = this.saveConversationsToJson(this.conversations, "conversations.json");
+
+      // Step 3: 上传文件
+      const file_info = await this.uploadJsonFile(jsonFile);
+      this.conversations_blob_id = file_info
+      if (this.leader === "人类" && this.gameOver) {
         updateUserPoints(this.addressId, 100)
       } else {
         updateUserPoints(this.addressId, -100)
       }
-      
+
       // 触发事件
       this.listeners?.onGameEvent("gameOver");
       return true;
@@ -228,11 +262,14 @@ class LifeAndDeathGame {
   async showDecisionOptions() {
     this.displayStatus();
     // const choice = await this.getInput("请选择(a/b/c-道具序号):");
-    
+
     if (this.leader === "人工智能") {
       // await waitTime(3000);
       if (this.gameOver) return;
+      console.log("uuuuuu uuuu");
+      this.conversations.push(this.aiMsg)
       const aiResult = await this.fetchGptOption(this.aiMsg);
+      this.conversations.push(aiResult)
       // 由于返回字段不确定 默认选择第一个字段
       const choice = Object.values(aiResult)?.[0] || "";
       console.log("ai choice: ", choice);
@@ -319,10 +356,10 @@ class LifeAndDeathGame {
         if (this.useEMP) {
           console.log(`本回合已经使用EMP,等下一回合再说`);
           resultDesc = `本回合已经使用EMP,等下一回合再说`;
-          if(this.leader === "人工智能") {
-           this.lastUseItem = `本回合已经使用EMP,等下一回合再说`
+          if (this.leader === "人工智能") {
+            this.lastUseItem = `本回合已经使用EMP,等下一回合再说`
           }
-          
+
         } else {
           this.useEMP = true;
           itemList.splice(itemIndex, 1);
@@ -335,7 +372,7 @@ class LifeAndDeathGame {
         console.log(`异世界造成2点伤害`);
         itemList.splice(itemIndex, 1);
         resultDesc = `异世界造成2点伤害`;
-        if(this.leader === "人工智能") {
+        if (this.leader === "人工智能") {
           this.lastUseItem = `本回合已经使用钢铁洪流`
         }
         break;
@@ -353,7 +390,7 @@ class LifeAndDeathGame {
         if (this.useEye) {
           console.log(`本回合已经使用EMP,等下一回合再说`);
           resultDesc = `本回合已经使用阴阳眼,等下一回合再说`;
-          if(this.leader === "人工智能") {
+          if (this.leader === "人工智能") {
             this.lastUseItem = `本回合已经使用阴阳眼, 当前异世界是${this.worlds[0]}`
           }
         } else {
@@ -361,17 +398,17 @@ class LifeAndDeathGame {
           itemList.splice(itemIndex, 1);
           console.log(`当前异世界是${this.worlds[0]}`);
           resultDesc = `当前异世界是${this.worlds[0]}`;
-          if(this.leader === "人工智能") {
+          if (this.leader === "人工智能") {
             this.lastUseItem = `本回合已经使用阴阳眼, 当前异世界是${this.worlds[0]}`
           }
         }
         break;
       default:
         console.log("未知道具");
-        if(this.leader === "人工智能") {
+        if (this.leader === "人工智能") {
           this.lastUseItem = '未知道具'
         }
-        
+
     }
     this.aiMsg = this.aiMsg + " " + resultDesc;
     const data = {
@@ -429,10 +466,8 @@ class LifeAndDeathGame {
 
     console.log(`---------------回合结果------------`, new Date().toLocaleString());
     console.log(
-      `${this.leader}选择了${
-        choice === "a" ? "自己" : "对方"
-      }进入异世界，该异世界是${world}，现在让我们进行第${
-        this.currentRound + 1
+      `${this.leader}选择了${choice === "a" ? "自己" : "对方"
+      }进入异世界，该异世界是${world}，现在让我们进行第${this.currentRound + 1
       }回合。`
     );
 
@@ -489,9 +524,8 @@ class LifeAndDeathGame {
 
     const roundDesc = (!this.aiHealth || !this.playerHealth) ? '回合结束' : `现在让我们进行第${this.currentRound + 1}回合`
     const data = {
-      msg: `${_currentLeader}选择了${
-        choice === "a" ? "自己" : "对方"
-      }进入异世界，该异世界是${world}\n
+      msg: `${_currentLeader}选择了${choice === "a" ? "自己" : "对方"
+        }进入异世界，该异世界是${world}\n
           ${isDangerous ? "受到伤害，减少生命值" : "没有受到伤害"}\n
           ${roundDesc}`,
     };
